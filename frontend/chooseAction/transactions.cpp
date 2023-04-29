@@ -8,14 +8,16 @@
 Transactions::Transactions(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Transactions),
-    bts("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/button.wav")
+    bts("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/button.wav")
 {
+
     ui->setupUi(this);
-    QPixmap bkgnd("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/taustaa.jpg");
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(QPalette::Window, bkgnd);
-    this->setPalette(palette);
+
+  QPixmap bkgnd("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/taustaa.jpg");
+  bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+  QPalette palette;
+  palette.setBrush(QPalette::Window, bkgnd);
+  this->setPalette(palette);
 
     connect(ui->pushButton,SIGNAL(clicked()),
             this,SLOT(clickerHandler()),Qt::QueuedConnection);
@@ -42,7 +44,7 @@ void Transactions::setMyData(const QString &newMyData)
 
 void Transactions::clickerHandler()
 {
-    bts.play();
+   bts.play();
     QPushButton * button = qobject_cast<QPushButton*>(sender());
     QString name = button->objectName();
     if(name == "pushButton"){

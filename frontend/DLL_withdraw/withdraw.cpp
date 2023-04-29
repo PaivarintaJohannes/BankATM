@@ -6,10 +6,11 @@
 withdraw::withdraw(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::withdraw),
-    bts("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/button.wav")
+  bts("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/button.wav")
 {
     ui->setupUi(this);
-    QPixmap bkgnd("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/taustaa.jpg");
+
+   QPixmap bkgnd("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/taustaa.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Window, bkgnd);
@@ -173,7 +174,7 @@ void withdraw::clearAll()
 
 void withdraw::logOutClickerHandler()
 {
-    bts.play();
+   bts.play();
     clearAll();
     emit logOutClicked();
     //qDebug()<<"logouttia painettu";

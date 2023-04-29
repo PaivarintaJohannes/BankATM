@@ -1,11 +1,12 @@
 #ifndef DLL_LOGGEDIN_H
 #define DLL_LOGGEDIN_H
-#include <QSound>
+
 #include <QDialog>
 #include <DLL_loggedin_global.h>
 #include <QtNetwork>
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
+#include <QSound>
 
 namespace Ui {
 class DLL_loggedin;
@@ -42,7 +43,7 @@ private:
     QNetworkAccessManager *loginManager;
     QNetworkReply *reply;
     QByteArray response_data;   
-    QSound bts;
+     QSound bts;
 };
 
 #endif // DLL_LOGGEDIN_H

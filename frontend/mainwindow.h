@@ -9,6 +9,7 @@
 #include <dll_endscene.h>
 #include <withdraw.h>
 #include "chooseaction.h"
+#include <QSound>
 
 
 
@@ -28,7 +29,7 @@ public:
     void setToken(const QByteArray &newToken);
 
 private slots:
-    void getSerialInfo();
+   // void getSerialInfo();
     void numberClickedHandler();
     void logOutAndClose();
     void EraseLoginRemoveClickhandler();

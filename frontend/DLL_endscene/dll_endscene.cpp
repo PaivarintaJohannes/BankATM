@@ -8,13 +8,16 @@
 DLL_endscene::DLL_endscene(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DLL_endscene)
+
 {
-    ui->setupUi(this);
-    QPixmap bkgnd("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/taustaa.jpg");
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(QPalette::Window, bkgnd);
-    this->setPalette(palette);
+
+  ui->setupUi(this);
+
+  QPixmap bkgnd("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/taustaa.jpg");
+   bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+   QPalette palette;
+   palette.setBrush(QPalette::Window, bkgnd);
+   this->setPalette(palette);
 
 }
 

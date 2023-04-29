@@ -1,7 +1,8 @@
 QT       += core gui
 QT += serialport
 QT +=network
-QT       += multimedia
+QT += multimedia
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
@@ -27,26 +28,30 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/build-chooseAction-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/ -lchooseAction
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/build-chooseAction-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/ -lchooseAction
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/chooseAction/build/release/ -lchooseAction
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/chooseAction/build/debug/ -lchooseAction
+else:unix: LIBS += -L$$PWD/chooseAction/build/ -lchooseAction
 
 INCLUDEPATH += $$PWD/chooseAction
 DEPENDPATH += $$PWD/chooseAction
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/build-DLL_endscene-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/ -lDLL_endscene
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/build-DLL_endscene-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/ -lDLL_endscene
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/DLL_endscene/build/release/ -lDLL_endscene
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/DLL_endscene/build/debug/ -lDLL_endscene
+else:unix: LIBS += -L$$PWD/DLL_endscene/build/ -lDLL_endscene
 
 INCLUDEPATH += $$PWD/DLL_endscene
 DEPENDPATH += $$PWD/DLL_endscene
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/build-DLL_loggedin-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/ -lDLL_loggedin
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/build-DLL_loggedin-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/ -lDLL_loggedin
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/DLL_loggedin/build/release/ -lDLL_loggedin
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/DLL_loggedin/build/debug/ -lDLL_loggedin
+else:unix: LIBS += -L$$PWD/DLL_loggedin/build/ -lDLL_loggedin
 
 INCLUDEPATH += $$PWD/DLL_loggedin
 DEPENDPATH += $$PWD/DLL_loggedin
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/build-DLL_withdraw-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/ -lDLL_withdraw
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/build-DLL_withdraw-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/ -lDLL_withdraw
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/DLL_withdraw/build/release/ -lDLL_withdraw
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/DLL_withdraw/build/debug/ -lDLL_withdraw
+else:unix: LIBS += -L$$PWD/DLL_withdraw/build/ -lDLL_withdraw
 
 INCLUDEPATH += $$PWD/DLL_withdraw
 DEPENDPATH += $$PWD/DLL_withdraw

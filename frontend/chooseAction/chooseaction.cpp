@@ -4,20 +4,22 @@
 #include <QDebug>
 #include "enviroment.h"
 #include <QJsonDocument>
-#include <QAudio>
+
 
 
 chooseAction::chooseAction(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::chooseAction),
-    bts("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/button.wav")
+   bts("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/button.wav")
 {
+
     ui->setupUi(this);
-    QPixmap bkgnd("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/taustaa.jpg");
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(QPalette::Window, bkgnd);
-    this->setPalette(palette);
+
+   QPixmap bkgnd("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/taustaa.jpg");
+   bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+   QPalette palette;
+   palette.setBrush(QPalette::Window, bkgnd);
+   this->setPalette(palette);
 
     //Clicker handlers for buttons
     connect(ui->Withdraw,SIGNAL(clicked()),
@@ -193,7 +195,7 @@ void chooseAction::ClickerHandler()
 
 void chooseAction::logOutClickerHandler()
 {
-    bts.play();
+   bts.play();
     clearAll();
     emit logOutClicked();
 }

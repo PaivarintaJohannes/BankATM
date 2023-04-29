@@ -2,21 +2,20 @@
 
 #include "ui_dll_loggedin.h"
 #include <QDebug>
-#include <QSound>
+
 
 DLL_loggedin::DLL_loggedin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DLL_loggedin),
-
-    bts("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/button.wav")
-
+   bts("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/button.wav")
 {
     ui->setupUi(this);
-    QPixmap bkgnd("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/taustaa.jpg");
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(QPalette::Window, bkgnd);
-    this->setPalette(palette);
+
+   QPixmap bkgnd("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/taustaa.jpg");
+   bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+   QPalette palette;
+   palette.setBrush(QPalette::Window, bkgnd);
+   this->setPalette(palette);
 
     //qDebug()<<"dll olio luotu";
 

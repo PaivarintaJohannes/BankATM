@@ -1,7 +1,8 @@
 QT -= gui
 QT += widgets
 QT += network
-QT       += multimedia
+QT += multimedia
+
 TEMPLATE = lib
 DEFINES += DLL_WITHDRAW_LIBRARY
 

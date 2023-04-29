@@ -7,6 +7,7 @@
 #include <QDialog>
 #include <DLL_endscene_global.h>
 
+
 namespace Ui {
 class DLL_endscene;
 }

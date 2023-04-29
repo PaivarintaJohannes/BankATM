@@ -8,10 +8,10 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
-     bts("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/button.wav")
+    bts("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/button.wav")
 {
     ui->setupUi(this);
-    QPixmap bkgnd("C:/Users/jeres/Documents/Koulu/pankkiprojekti/group_1/frontend/Äänet/taustaa.jpg");
+   QPixmap bkgnd("C:/Users/Jorku/Desktop/BankATM/frontend/Äänet/taustaa.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Window, bkgnd);
@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->btnRemove->setVisible(false);
 
-    QTimer::singleShot(2000, this, SLOT(getSerialInfo()));
+    //QTimer::singleShot(2000, this, SLOT(getSerialInfo()));
 
     connect(ui->btn0,SIGNAL(clicked()),
             this,SLOT(numberClickedHandler()),Qt::QueuedConnection);
@@ -85,7 +85,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::getSerialInfo()
+/*void MainWindow::getSerialInfo()
 {
 
     Q_FOREACH(QSerialPortInfo port, QSerialPortInfo::availablePorts()){
@@ -148,7 +148,7 @@ void MainWindow::getSerialInfo()
         }
 
     }
-}
+}*/
 
 
 void MainWindow::SendIdTiliSlot(QString tili, QString etunimi, QString sukunimi)
@@ -175,7 +175,7 @@ void MainWindow::numberClickedHandler()
 {
    bts.play();
 
-    if(SerialInfo!=NULL){
+    if(SerialInfo==NULL){
         QPushButton * button = qobject_cast<QPushButton*>(sender());
         QString name = button->objectName();
         //qDebug() << "Button name:" << name;
@@ -195,7 +195,7 @@ void MainWindow::EraseLoginRemoveClickhandler()
 {
     bts.play();
 
-    if(SerialInfo!=NULL){
+    if(SerialInfo==NULL){
         QPushButton * button = qobject_cast<QPushButton*>(sender());
         QString name = button->objectName();
         //qDebug() << "Button name:" << name;
@@ -210,7 +210,7 @@ void MainWindow::EraseLoginRemoveClickhandler()
         }
         else if(name == "btnLogin") {
             QJsonObject jsonObj;
-            jsonObj.insert("idkortti",SerialInfo);
+            jsonObj.insert("idkortti","1111");
             jsonObj.insert("pinkoodi",pin);
 
             QString site_url=Enviroment::getBaseUrl()+"/login";
@@ -255,7 +255,7 @@ void MainWindow::loginSlot(QNetworkReply *reply)
         ui->labelInfo->setText("login ok");
 
         token = response_data;
-        DLLlogin.setToken_idKortti(response_data,SerialInfo);
+        DLLlogin.setToken_idKortti(response_data,"1111");
         DLLlogin.show();
     }
     else{
@@ -279,7 +279,7 @@ void MainWindow::clearAll()
     fakePin.clear();
     pin.clear();
     token.clear();
-    QTimer::singleShot(6000, this, SLOT(getSerialInfo()));
+    //QTimer::singleShot(6000, this, SLOT(getSerialInfo()));
 }
 
 const QByteArray &MainWindow::getToken() const

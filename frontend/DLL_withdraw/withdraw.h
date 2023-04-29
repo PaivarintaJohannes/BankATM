@@ -34,7 +34,7 @@ private:
     QByteArray Response;
     QString Data;
     QByteArray response_data;
-    QSound bts;
+     QSound bts;
 
 private slots:
     void ClickerHandler();
