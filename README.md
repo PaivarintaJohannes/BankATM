@@ -58,9 +58,6 @@ ER-Diagram
 
 <img src="er-diagram.png">
 
-State Diagram
-
-<img src="State Diagram.png">
 
 Login Window
 
@@ -69,10 +66,6 @@ Login Window
 Another menu
 
 <img src="ChooseActionWindow.png">
-
-End of session- windwow
-
-<img src="EndSceneWindow.png">
 
 
 
