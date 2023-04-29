@@ -1,7 +1,7 @@
 
 
 <img src="er-diagram.png">
-## Database structure
+
 
 <img src="LoginWindow.png">
 
